@@ -40,11 +40,11 @@ export default function Home() {
     <div className={styles.home_image}>
 
       <img src={`${img2}`} className = {styles.img1} alt="img2"/>
-      <img src={`${img3}`} className = {styles.img1} alt="img3"/>
-      <img src={`${img4}`} className = {styles.img1} alt="img4"/>
+      <img src={`${img3}`} style = {{transform: `translate(${-buttonX}px, ${-buttonY}px)`}} className = {styles.img1} alt="img3"/>
+      <img src={`${img4}`} style = {{transform: `translate(${buttonX}px, ${-buttonY}px)`}} className = {styles.img1} alt="img4"/>
       <img src={`${img5}`} style = {{transform: `translate(${buttonX}px, ${buttonY}px)`}} className = {styles.img1} alt="img5"/>
-      <img src={`${img6}`} className = {styles.img1} alt="img6"/>
-      <img src={`${img7}`} className = {styles.img1} alt="img7"/>
+      <img src={`${img6}`} style = {{transform: `translate(${-buttonX}px, ${buttonY}px)`}} className = {styles.img1} alt="img6"/>
+      <img src={`${img7}`} style = {{transform: `translate(${0}px, ${-buttonY}px)`}}className = {styles.img1} alt="img7"/>
       <img src={`${img1}`} className = {styles.img1} alt="img1"/>
     </div>
 
