@@ -19,9 +19,7 @@ export default function Home() {
     setButtonY(floorAnimationY);
     setButtonX(floorAnimationX);
 };
-    useEffect(() => {
-      one_floor.addEventListener('click', handleClick, { passive: true });
-    });
+    
 
   return (
     <div>
@@ -30,7 +28,7 @@ export default function Home() {
 
     <div className={styles.floor}>
       <ul>
-        <li><button id="one_floor"><p>1 floor</p></button></li>
+        <li><button onClick={handleClick}><p>1 floor</p></button></li>
         <li><button><p>2 floor</p></button></li>
         <li><button><p>3 floor</p></button></li>
       </ul>
@@ -41,7 +39,7 @@ export default function Home() {
       <img src={`${img2}`} className = {styles.img1} alt="img2"/>
       <img src={`${img3}`} className = {styles.img1} alt="img3"/>
       <img src={`${img4}`} className = {styles.img1} alt="img4"/>
-      <img src={`${img5}`} style = {{transform: `translate(${buttonX}, ${buttonY})`}} className = {styles.img1} alt="img5"/>
+      <img src={`${img5}`} style = {{transform: `translate(${buttonX}px, ${buttonY}px)`}} className = {styles.img1} alt="img5"/>
       <img src={`${img6}`} className = {styles.img1} alt="img6"/>
       <img src={`${img7}`} className = {styles.img1} alt="img7"/>
       <img src={`${img1}`} className = {styles.img1} alt="img1"/>
