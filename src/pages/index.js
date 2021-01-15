@@ -10,6 +10,16 @@ import img7 from "../../static/building-anatomy-7.png";
 
 export default function Home() {
 
+  const [button, setButton] = useState(0);
+  const handleClick = () => {
+    let floorAnimationY = 20;
+    let floorAnimationX = 20;
+
+    setButton(floorAnimation);
+
+    useEffect(() => {
+      one_floor.addEventListener('click', handleClick, { passive: true });
+    });
 
   return (
     <div>
@@ -18,7 +28,7 @@ export default function Home() {
 
     <div className={styles.floor}>
       <ul>
-        <li><button><p>1 floor</p></button></li>
+        <li><button id="one_floor"><p>1 floor</p></button></li>
         <li><button><p>2 floor</p></button></li>
         <li><button><p>3 floor</p></button></li>
       </ul>
@@ -26,7 +36,7 @@ export default function Home() {
 
     <div className={styles.home_image}>
 
-      <img src={`${img2}`} className = {styles.img1} alt="img2"/>
+      <img src={`${img2}`} style = {{transform:}} className = {styles.img1} alt="img2"/>
       <img src={`${img3}`} className = {styles.img1} alt="img3"/>
       <img src={`${img4}`} className = {styles.img1} alt="img4"/>
       <img src={`${img5}`} className = {styles.img1} alt="img5"/>
