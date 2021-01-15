@@ -10,13 +10,15 @@ import img7 from "../../static/building-anatomy-7.png";
 
 export default function Home() {
 
-  const [button, setButton] = useState(0);
+  const [buttonY, setButtonY] = useState(0);
+  const [buttonX, setButtonX] = useState(0);
   const handleClick = () => {
     let floorAnimationY = 20;
     let floorAnimationX = 20;
 
-    setButton(floorAnimation);
-
+    setButtonY(floorAnimationY);
+    setButtonX(floorAnimationX);
+};
     useEffect(() => {
       one_floor.addEventListener('click', handleClick, { passive: true });
     });
@@ -36,10 +38,10 @@ export default function Home() {
 
     <div className={styles.home_image}>
 
-      <img src={`${img2}`} style = {{transform:}} className = {styles.img1} alt="img2"/>
+      <img src={`${img2}`} className = {styles.img1} alt="img2"/>
       <img src={`${img3}`} className = {styles.img1} alt="img3"/>
       <img src={`${img4}`} className = {styles.img1} alt="img4"/>
-      <img src={`${img5}`} className = {styles.img1} alt="img5"/>
+      <img src={`${img5}`} style = {{transform: `translate(${buttonX}, ${buttonY})`}} className = {styles.img1} alt="img5"/>
       <img src={`${img6}`} className = {styles.img1} alt="img6"/>
       <img src={`${img7}`} className = {styles.img1} alt="img7"/>
       <img src={`${img1}`} className = {styles.img1} alt="img1"/>
