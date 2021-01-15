@@ -52,6 +52,7 @@ html{
 
 .img1{
   position: absolute;
+  transition: 0.5s;
   height: 50vw;
   left: 26.5vw;
 }

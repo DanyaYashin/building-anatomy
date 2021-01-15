@@ -15,11 +15,14 @@ export default function Home() {
   const handleClick = () => {
     let floorAnimationY = 20;
     let floorAnimationX = 20;
-
+    if (buttonX == 20){
+      floorAnimationX=0;
+      floorAnimationY=0;
+    }
     setButtonY(floorAnimationY);
     setButtonX(floorAnimationX);
 };
-    
+
 
   return (
     <div>
