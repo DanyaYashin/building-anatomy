@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
 
 html{
-  background-color: #FFDA00	;
+  background-color: #000000	;
   font-family: 'Noto Sans KR', sans-serif;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .header{
   text-align: center;
   font-size: 40px;
   letter-spacing: 7px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000000, 0 0 1em #ff38f8;
+  z-index: 1;
 }
 
 .floor{
@@ -28,7 +32,12 @@ html{
   font-size: 20px;
   border-style: hidden;
   margin: 1px;
-  background-color: #FFDA00	;
+  background-color: #000000	;
+  color: #ffffff;
+}
+
+.floor :hover{
+  text-shadow: 1px 1px 2px black, 0 0 1em #c400e2;
 }
 
 .side{
@@ -47,12 +56,35 @@ html{
   font-size: 20px;
   border-style: hidden;
   margin: 1px;
-  background-color: #FFDA00	;
+  background-color: #000000;
+  color: #ffffff;
+
+}
+
+.side :hover{
+  text-shadow: 1px 1px 2px black, 0 0 1em #c400e2;
 }
 
 .img1{
   position: absolute;
-  transition: 0.5s;
+  transition: 1.2s;
   height: 50vw;
   left: 26.5vw;
+  z-index: 2;
+}
+
+.img2{
+  position: absolute;
+  transition: 1.7s;
+  height: 50vw;
+  left: 26.5vw;
+  z-index: 2;
+}
+
+.img3{
+  position: absolute;
+  transition: 2.3s;
+  height: 50vw;
+  left: 26.5vw;
+  z-index: 2;
 }
