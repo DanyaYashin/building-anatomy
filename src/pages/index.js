@@ -102,6 +102,17 @@ export default function Home() {
   }
 }
 
+  const [Inside, setInside] = useState(1000);
+  const inSideButton = () =>{
+    let transparency = 0.2;
+   setInside(transparency);
+ }
+
+ const outSideButton = () =>{
+   let transparency = 1;
+  setInside(transparency);
+}
+
   return (
     <div>
 
@@ -121,29 +132,35 @@ export default function Home() {
       <img src={`${img2}`} style = {{transform: `translate(${0}px, ${buttonY1}px)`}} className = {styles.img1} alt="img2"/>
       <img src={`${img3}`} style = {{transform: `translate(${-buttonX1}px, ${-buttonY1}px)`}} className = {styles.img1} alt="img3"/>
       <img src={`${img4}`} style = {{transform: `translate(${buttonX1}px, ${-buttonY1}px)`}} className = {styles.img1} alt="img4"/>
+      <div className={styles.inside} style={{opacity: `${Inside}`}}>
       <img src={`${img5}`} style = {{transform: `translate(${buttonX1}px, ${buttonY1}px)`}} className = {styles.img1} alt="img5"/>
       <img src={`${img6}`} style = {{transform: `translate(${-buttonX1}px, ${buttonY1}px)`}} className = {styles.img1} alt="img6"/>
       <img src={`${img7}`} style = {{transform: `translate(${0}px, ${-buttonY1}px)`, transition: `1s`}}className = {styles.img1} alt="img7"/>
+      </div>
 
       <img src={`${img8}`} style = {{transform: `translate(${-buttonX2}px, ${-buttonY2}px)`}} className = {styles.img2} alt="img8"/>
       <img src={`${img9}`} style = {{transform: `translate(${buttonX2}px, ${-buttonY2}px)`}} className = {styles.img2} alt="img9"/>
+      <div className={styles.inside} style={{opacity: `${Inside}`}}>
       <img src={`${img10}`} style = {{transform: `translate(${buttonX2}px, ${buttonY2}px)`}} className = {styles.img2} alt="img10"/>
       <img src={`${img11}`} style = {{transform: `translate(${-buttonX2}px, ${buttonY2}px)`}} className = {styles.img2} alt="img11"/>
       <img src={`${img12}`} style = {{transform: `translate(${0}px, ${-buttonY2}px)`}} className = {styles.img2} alt="img12"/>
+      </div>
 
       <img src={`${img13}`} style = {{transform: `translate(${-buttonX3}px, ${-buttonY3}px)`}} className = {styles.img3} alt="img13"/>
       <img src={`${img14}`} style = {{transform: `translate(${buttonX3}px, ${-buttonY3}px)`}} className = {styles.img3} alt="img14"/>
+      <div className={styles.inside} style={{opacity: `${Inside}`}}>
       <img src={`${img15}`} style = {{transform: `translate(${buttonX3}px, ${buttonY3}px)`}} className = {styles.img3} alt="img15"/>
       <img src={`${img16}`} style = {{transform: `translate(${-buttonX3}px, ${buttonY3}px)`}} className = {styles.img3} alt="img16"/>
       <img src={`${img17}`} style = {{transform: `translate(${0}px, ${-buttonY3}px)`}} className = {styles.img3} alt="img17"/>
+      </div>
 
       <img src={`${img1_1}`} className = {styles.img1} alt="img1"/>
     </div>
 
     <div className={styles.side}>
       <ul>
-        <li><button><p>inside</p></button></li>
-        <li><button><p>outside</p></button></li>
+        <li><button onClick={inSideButton}><p>inside</p></button></li>
+        <li><button onClick={outSideButton}><p>outside</p></button></li>
       </ul>
     </div>
 

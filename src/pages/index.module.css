@@ -88,3 +88,7 @@ html{
   left: 26.5vw;
   z-index: 2;
 }
+
+.inside{
+  opacity: 1;
+}
