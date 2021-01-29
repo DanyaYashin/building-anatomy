@@ -61,8 +61,15 @@ export default function Home() {
 };
 
   const clickSecondButton = () =>{
-    handleClick1();
-    handleClick2();
+    if (buttonX3==0){
+      handleClick3();
+    } else if (buttonX1==0){
+      handleClick1();
+    } else {
+      handleClick1();
+      handleClick2();
+    }
+
 }
 
   const clickThirdButton = () =>{
