@@ -60,22 +60,46 @@ export default function Home() {
     setButtonX3(floorAnimationX3);
 };
 
+  const clickFirstButton = () =>{
+    if (buttonX3==0 && buttonX2==0){
+      handleClick3();
+      handleClick2();
+    } else if (buttonX2==0){
+      handleClick2();
+    } else {
+      handleClick1();
+    }
+}
+
   const clickSecondButton = () =>{
     if (buttonX3==0){
       handleClick3();
-    } else if (buttonX1==0){
-      handleClick1();
-    } else {
+    } else if(buttonX2==0 && buttonX1==0){
       handleClick1();
       handleClick2();
+    } else if(buttonX1==0){
+      handleClick2();
+    } else {
+    handleClick1();
+    handleClick2();
     }
-
 }
 
   const clickThirdButton = () =>{
+    if (buttonX1==0 && buttonX2==0 && buttonX3==0){
+      handleClick1();
+      handleClick2();
+      handleClick3();
+    } else if (buttonX2==0 && buttonX1==0){
+      handleClick3();
+    } else if (buttonX1==0){
+      handleClick2();
+      handleClick3();
+    } else {
     handleClick1();
     handleClick2();
     handleClick3();
+  }
 }
 
   return (
@@ -87,7 +111,7 @@ export default function Home() {
       <ul>
         <li><button onClick={clickThirdButton}><p>3 floor</p></button></li>
         <li><button onClick={clickSecondButton}><p>2 floor</p></button></li>
-        <li><button onClick={handleClick1}><p>1 floor</p></button></li>
+        <li><button onClick={clickFirstButton}><p>1 floor</p></button></li>
       </ul>
     </div>
 
