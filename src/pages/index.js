@@ -21,6 +21,43 @@ import img17 from "../../static/building-anatomy-17.png";
 
 export default function Home() {
 
+
+  const [Inside1, setInside1] = useState(1);
+  const inSideButton1 = () =>{
+    let transparency = 0.3;
+   setInside1(transparency);
+ }
+
+  const [Inside2, setInside2] = useState(1);
+  const inSideButton2 = () =>{
+    let transparency = 0.3;
+    setInside2(transparency);
+  }
+
+  const [Inside3, setInside3] = useState(1);
+  const inSideButton3 = () =>{
+    let transparency = 0.3;
+    setInside3(transparency);
+  }
+
+  const outSideButton = () =>{
+    let transparency = 1;
+   setInside1(transparency);
+   setInside2(transparency);
+   setInside3(transparency);
+ }
+
+ const inSideButton = () =>{
+   if (buttonX3==0){
+     inSideButton3();
+   } else if (buttonX3==1000 && buttonX2==0){
+     inSideButton2();
+   } else if (buttonX2==1000){
+     inSideButton1();
+   }
+}
+
+
   const [buttonY1, setButtonY1] = useState(1000);
   const [buttonX1, setButtonX1] = useState(1000);
   const handleClick1 = () => {
@@ -100,18 +137,10 @@ export default function Home() {
     handleClick2();
     handleClick3();
   }
+
 }
 
-  const [Inside, setInside] = useState(1000);
-  const inSideButton = () =>{
-    let transparency = 0.2;
-   setInside(transparency);
- }
 
- const outSideButton = () =>{
-   let transparency = 1;
-  setInside(transparency);
-}
 
   return (
     <div>
@@ -132,7 +161,7 @@ export default function Home() {
       <img src={`${img2}`} style = {{transform: `translate(${0}px, ${buttonY1}px)`}} className = {styles.img1} alt="img2"/>
       <img src={`${img3}`} style = {{transform: `translate(${-buttonX1}px, ${-buttonY1}px)`}} className = {styles.img1} alt="img3"/>
       <img src={`${img4}`} style = {{transform: `translate(${buttonX1}px, ${-buttonY1}px)`}} className = {styles.img1} alt="img4"/>
-      <div className={styles.inside} style={{opacity: `${Inside}`}}>
+      <div className={styles.inside} style={{opacity: `${Inside1}`}}>
       <img src={`${img5}`} style = {{transform: `translate(${buttonX1}px, ${buttonY1}px)`}} className = {styles.img1} alt="img5"/>
       <img src={`${img6}`} style = {{transform: `translate(${-buttonX1}px, ${buttonY1}px)`}} className = {styles.img1} alt="img6"/>
       <img src={`${img7}`} style = {{transform: `translate(${0}px, ${-buttonY1}px)`, transition: `1s`}}className = {styles.img1} alt="img7"/>
@@ -140,7 +169,7 @@ export default function Home() {
 
       <img src={`${img8}`} style = {{transform: `translate(${-buttonX2}px, ${-buttonY2}px)`}} className = {styles.img2} alt="img8"/>
       <img src={`${img9}`} style = {{transform: `translate(${buttonX2}px, ${-buttonY2}px)`}} className = {styles.img2} alt="img9"/>
-      <div className={styles.inside} style={{opacity: `${Inside}`}}>
+      <div className={styles.inside} style={{opacity: `${Inside2}`}}>
       <img src={`${img10}`} style = {{transform: `translate(${buttonX2}px, ${buttonY2}px)`}} className = {styles.img2} alt="img10"/>
       <img src={`${img11}`} style = {{transform: `translate(${-buttonX2}px, ${buttonY2}px)`}} className = {styles.img2} alt="img11"/>
       <img src={`${img12}`} style = {{transform: `translate(${0}px, ${-buttonY2}px)`}} className = {styles.img2} alt="img12"/>
@@ -148,7 +177,7 @@ export default function Home() {
 
       <img src={`${img13}`} style = {{transform: `translate(${-buttonX3}px, ${-buttonY3}px)`}} className = {styles.img3} alt="img13"/>
       <img src={`${img14}`} style = {{transform: `translate(${buttonX3}px, ${-buttonY3}px)`}} className = {styles.img3} alt="img14"/>
-      <div className={styles.inside} style={{opacity: `${Inside}`}}>
+      <div className={styles.inside} style={{opacity: `${Inside3}`}}>
       <img src={`${img15}`} style = {{transform: `translate(${buttonX3}px, ${buttonY3}px)`}} className = {styles.img3} alt="img15"/>
       <img src={`${img16}`} style = {{transform: `translate(${-buttonX3}px, ${buttonY3}px)`}} className = {styles.img3} alt="img16"/>
       <img src={`${img17}`} style = {{transform: `translate(${0}px, ${-buttonY3}px)`}} className = {styles.img3} alt="img17"/>
